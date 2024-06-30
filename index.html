@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skidder-Folded.lol</title>
+    <style>
+        body {
+            background-color: #0D0D0D;
+            margin: 0;
+            padding: 0; 
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow-y: hidden; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1C1C1C;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .contact-link {
+            color: #FFF;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            margin-right: 40px;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
+        }
+
+        .glow-text, .bio-text {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .glow-text {
+            font-size: 34px;
+            text-shadow: 0 0 3px white, 0 0 5px white;
+            filter: drop-shadow(0 0 3px white);
+        }
+
+        .bio-text {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="img.png" alt="Logo" class="logo">
+        </a>
+        <nav>
+            <a href="contact.html" class="contact-link">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="glow-text animate-fall">
+        Skidder-Folded.lol
+    </div>
+
+    <div class="bio-text animate-fall">
+        Private bio hosting site
+    </div>
+
+    <script>
+        const bioText = document.querySelector('.bio-text');
+        bioText.addEventListener('animationend', function() {
+            document.body.style.overflowY = 'auto';
+        });
+    </script>
+</body>
+</html>
